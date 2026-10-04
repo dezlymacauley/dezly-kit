@@ -54,3 +54,6 @@ sudo pacman -S --needed --noconfirm rofi
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
+
+# Code editor
+sudo pacman -S --needed --noconfirm zed
