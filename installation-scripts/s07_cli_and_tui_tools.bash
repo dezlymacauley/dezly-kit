@@ -18,6 +18,8 @@ if command -v mise &>/dev/null; then
 
     # A cli tool used by `mise` to provide completion
     mise use -g usage
+
+    mise use -g cargo-binstall@latest
 fi
 
 printf "%s\n\n" '___________________________________________________________'
