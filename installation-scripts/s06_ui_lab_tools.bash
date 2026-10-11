@@ -32,41 +32,48 @@ printf "%s\n\n" '___________________________________________________________'
 
 # Language support for the following file types:
 # .html .css .json
-bun install --global --trust vscode-langservers-extracted
+# bun install --global --trust vscode-langservers-extracted
+npm install --global --allow-scripts=core-js vscode-langservers-extracted
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # Language support for the following file types:
 # .ts .js
-bun install --global --trust @vtsls/language-server
+# bun install --global --trust @vtsls/language-server
+npm install --global @vtsls/language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # Needed by Astro
 
-bun install --global --trust typescript
+# bun install --global --trust typescript
+# npm install --global typescript
+
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # Language support for the following file types:
 # .astro
-bun install --global --trust @astrojs/language-server
+# bun install --global --trust @astrojs/language-server
+npm install --global @astrojs/language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # Language support for the following file types:
 # .svelte
-bun install --global --trust svelte-language-server
+# bun install --global --trust svelte-language-server
+npm install --global svelte-language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # A code formatter for the following file types:
 # .html .css .json .js .ts .yaml
-bun install --global --trust prettier
+# bun install --global --trust prettier
+npm install --global prettier
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
