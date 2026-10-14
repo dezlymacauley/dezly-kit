@@ -40,7 +40,7 @@ vim.o.number = true
 --
 -- The relative line number and k (if the line is above the current line).
 -- or the relative line number and j (if the line is below the current line)
-vim.o.relativenumber = true
+-- vim.o.relativenumber = true
 
 -- This will ensure that there is always an empty column on the left of the 
 -- line numbers this column is used by Neovim to display a symbol when your

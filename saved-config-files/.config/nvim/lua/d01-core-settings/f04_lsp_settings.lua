@@ -2,6 +2,8 @@
 
   ABOUT: f05_lsp_settings.lua
 
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+
 --]]
 
 -------------------------------------------------------------------------------
@@ -10,6 +12,12 @@
 
 -- .rs files
 vim.lsp.enable("rust_analyzer")
+-------------------------------------------------------------------------------
+
+-- SECTION: devops-lab
+
+-- .tf files
+vim.lsp.enable("terraformls")
 -------------------------------------------------------------------------------
 
 -- SECTION: c-lab and cpp-lab

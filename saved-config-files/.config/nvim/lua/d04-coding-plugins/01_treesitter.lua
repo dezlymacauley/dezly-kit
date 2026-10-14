@@ -48,7 +48,8 @@ return {
                 "asm", "bash", "c", "cpp", "cmake", "css", "csv", "cuda", "diff",
                 "dockerfile", "fish", "git_config", "gitignore", "go", "gomod", "gosum", "html", "ini", "javascript", "json", 
                 "markdown", "make", "markdown_inline", "python", "rust", "solidity", "sql", "http",
-                "svelte", "toml", "typescript", "yaml", "zig", "tsx", "hurl", "kdl", "ninja", "astro"
+                "svelte", "toml", "typescript", "yaml", "zig", "tsx", "hurl", "kdl", "ninja", "astro",
+                "terraform"
             }
         )
         
@@ -60,7 +61,8 @@ return {
                 "cmake", "c", "cpp", "css", "dockerfile", "dosini", "gitconfig", "gitignore",
                 "go", "gomod", "gosum", "html", "javascript", "json", "http",
                 "markdown", "make", "python", "rust", "sh", "solidity", "sql", "svelte",
-                "toml", "typescript", "typescriptreact", "yaml", "zig", "hurl", "kdl", "ninja", "astro"
+                "toml", "typescript", "typescriptreact", "yaml", "zig", "hurl", "kdl", "ninja", "astro",
+                "tf"
             },
             callback = function()
                 vim.treesitter.start()
