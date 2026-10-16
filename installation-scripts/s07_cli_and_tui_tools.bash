@@ -20,6 +20,9 @@ if command -v mise &>/dev/null; then
     mise use -g usage
 
     mise use -g cargo-binstall@latest
+
+    # A Rust-powered toolkit for Node.js 
+    mise use -g nub
 fi
 
 printf "%s\n\n" '___________________________________________________________'
@@ -44,7 +47,3 @@ sudo pacman -S --needed --noconfirm yazi
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
-
-paru -S --needed --noconfirm comfy-desktop-bin
-
-sudo pacman -S --needed --noconfirm wezterm
