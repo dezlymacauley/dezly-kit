@@ -1,4 +1,4 @@
--- 2 space indentation
+-- 2-space indentation
 vim.bo.expandtab = true
 vim.bo.tabstop = 2
 vim.bo.softtabstop = 2
@@ -7,15 +7,15 @@ vim.bo.autoindent = true
 vim.bo.smartindent = true
 
 -- Press `space then ff` to format the current TypeScript file
--- with `prettier`
+-- with `bun fmt`
 vim.keymap.set("n", "<leader>ff", function()
     vim.cmd("write") -- save file first
 
-    local file = vim.fn.expand("%")
+    local file = vim.fn.expand("%:p")
 
     vim.system({
-        "prettier",
-        "--write",
+        "bun",
+        "fmt",
         file,
     }, {}, function()
         vim.schedule(function()

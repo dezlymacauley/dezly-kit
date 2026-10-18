@@ -12,14 +12,32 @@ sudo pacman -S --needed --noconfirm nodejs
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# The default package manager for JavaScript
+# The default package manager for JavaScript projects
 sudo pacman -S --needed --noconfirm npm
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# A Rust-powered JavaScript runtime that can run HTML files directly
-sudo pacman -S --needed --noconfirm bun
+# A Rust-powered toolkit for UI related projects
+# sudo pacman -S --needed --noconfirm bun
+# Note: The command `bun upgrade --canary` doesn't work if bun was installed
+# via Arch Linux
+
+# ~ took 6s
+# ❯ mise unuse -g bun
+# scanning tracked configs      checking running p… ✔
+# ~
+# ❯ mise uninstall --all bun
+# mise WARN  no versions found for bun
+# ~
+
+# If you want the latest version of bun:
+mise use -g bun@latest
+
+# If you want the latest stable version of bun:
+# bun upgrade --stable
+
+bun upgrade --canary
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
@@ -30,50 +48,26 @@ sudo pacman -S --needed --noconfirm chromium
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# Language support for the following file types:
-# .html .css .json
-# bun install --global --trust vscode-langservers-extracted
-npm install --global --allow-scripts=core-js vscode-langservers-extracted
+# Language support for HTML and CSS files
+bun install --trust --global vscode-langservers-extracted
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# Language support for the following file types:
-# .ts .js
-# bun install --global --trust @vtsls/language-server
-npm install --global @vtsls/language-server
+# Language support for TypeScript and JavaScript files
+bun install --trust --global @vtsls/language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# Needed by Astro
-
-# bun install --global --trust typescript
-# npm install --global typescript
+# Language support for SvelteKit projects
+bun install --trust --global svelte-language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-# Language support for the following file types:
-# .astro
-# bun install --global --trust @astrojs/language-server
-npm install --global @astrojs/language-server
-
-printf "%s\n\n" '___________________________________________________________'
-#______________________________________________________________________________
-
-# Language support for the following file types:
-# .svelte
-# bun install --global --trust svelte-language-server
-npm install --global svelte-language-server
-
-printf "%s\n\n" '___________________________________________________________'
-#______________________________________________________________________________
-
-# A code formatter for the following file types:
-# .html .css .json .js .ts .yaml
-# bun install --global --trust prettier
-npm install --global prettier
+# Language support for Astro projects
+bun install --trust --global @astrojs/language-server
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
