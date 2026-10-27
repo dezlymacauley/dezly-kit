@@ -19,7 +19,8 @@ printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 # A Rust-powered toolkit for UI related projects
-# sudo pacman -S --needed --noconfirm bun
+sudo pacman -S --needed --noconfirm bun
+
 # Note: The command `bun upgrade --canary` doesn't work if bun was installed
 # via Arch Linux
 
@@ -32,12 +33,12 @@ printf "%s\n\n" '___________________________________________________________'
 # ~
 
 # If you want the latest version of bun:
-mise use -g bun@latest
+# mise use -g bun@latest
 
 # If you want the latest stable version of bun:
 # bun upgrade --stable
 
-bun upgrade --canary
+# bun upgrade --canary
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
