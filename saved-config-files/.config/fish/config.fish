@@ -3,26 +3,34 @@
 # SECTION: Path Statements
 
 #______________________________________________________________________________
+
 # Globally installed npm packages
 
 # Creates a custom directory for npm packages installed with the `-g` flag.
 # E.g. `npm install -g typescript`
-#
+
 # if not test -d $HOME/.npm-global-pkgs
 #     mkdir $HOME/.npm-global-pkgs
 # end
 
 # Checks if `npm` is available, then sets the npm prefix to
 # the custom directory.
-#
+
 # if command -q npm
 #     if test (npm config get prefix) != $HOME/.npm-global-pkgs
 #         npm config set prefix $HOME/.npm-global-pkgs
 #     end
 # end
 
+# fish_add_path "$HOME/.npm-global-pkgs/bin"
+
+#______________________________________________________________________________
+
 # Adds the Bun global binary directory to PATH.
 fish_add_path "$HOME/.bun/bin"
+
+# For using tools like sqlx-cli 
+fish_add_path "$HOME/.cargo/bin"
 
 # `bun install -g ...` installs global binaries here.
 
@@ -106,7 +114,7 @@ alias github-public="cd $GH_PUBLIC"
 alias c-lab="cd $GH_PUBLIC/c-lab"
 alias cpp-lab="cd $GH_PUBLIC/cpp-lab"
 alias database-lab="cd $GH_PUBLIC/database-lab"
-alias devops-lab="cd $GH_PUBLIC/devops-lab"
+alias mlops-lab="cd $GH_PUBLIC/mlops-lab"
 alias dezly-kit="cd $GH_PUBLIC/dezly-kit"
 alias go-lab="cd $GH_PUBLIC/go-lab"
 alias python-lab="cd $GH_PUBLIC/python-lab"
