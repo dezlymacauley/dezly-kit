@@ -62,7 +62,7 @@ return {
                 "go", "gomod", "gosum", "html", "javascript", "json", "http",
                 "markdown", "make", "python", "rust", "sh", "solidity", "sql", "svelte",
                 "toml", "typescript", "typescriptreact", "yaml", "zig", "hurl", "kdl", "ninja", "astro",
-                "tf"
+                "terraform"
             },
             callback = function()
                 vim.treesitter.start()

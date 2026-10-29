@@ -17,7 +17,15 @@ vim.lsp.enable("rust_analyzer")
 -- SECTION: devops-lab
 
 -- .tf files
+vim.filetype.add({
+	extension = {
+		tf = "terraform",
+		tfvars = "terraform-vars",
+	},
+})
+
 vim.lsp.enable("terraformls")
+
 -------------------------------------------------------------------------------
 
 -- SECTION: c-lab and cpp-lab
