@@ -5,7 +5,7 @@
 // SECTION: Spawn at startup
 
 // Background image
-spawn-sh-at-startup "swaybg -i ~/local-workspace/shared-assets/cyberpunk_couple.png"
+spawn-sh-at-startup "swaybg -i ~/local-workspace/dezly-kit-assets/cyberpunk_couple.png"
 
 // Pop up notifications
 spawn-sh-at-startup "swaync"
