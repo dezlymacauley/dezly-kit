@@ -154,6 +154,7 @@ alias github-private="cd $GH_PRIVATE"
 
 alias config-fish="cd $HOME/.config/fish && nvim config.fish"
 alias config-neovim="cd $HOME/.config/nvim && nvim ."
+alias config-niri="cd $HOME/.config/niri && nvim config.kdl"
 alias config-rio="cd $HOME/.config/rio && nvim config.toml"
 alias config-yazi="cd $HOME/.config/yazi && nvim yazi.toml"
 alias config-zellij="cd $HOME/.config/zellij && nvim config.kdl"
