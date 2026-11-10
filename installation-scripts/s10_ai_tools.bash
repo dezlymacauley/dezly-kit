@@ -6,15 +6,24 @@ printf "\n%s\n" "AI Tools"
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
-if command -v bun &>/dev/null; then
-    # Coding Agent Harness
-    bun add -g --ignore-scripts @earendil-works/pi-coding-agent
-fi
+# if command -v bun &>/dev/null; then
+#     # Coding Agent Harness
+#     bun add -g --ignore-scripts @earendil-works/pi-coding-agent
+# fi
+
+paru -S --needed pi-coding-agent-bin 
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
 
 sudo pacman -S --needed --noconfirm ollama
+
+printf "%s\n\n" '___________________________________________________________'
+#______________________________________________________________________________
+
+# NOTE: This takes quite some time to download
+
+paru -S --needed lmstudio-bin
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
