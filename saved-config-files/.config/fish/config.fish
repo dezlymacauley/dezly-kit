@@ -186,10 +186,63 @@ end
 
 # SECTION: Custom Functions
 
+#______________________________________________________________________________
+
 function list_path_variable_contents
     printf "%s\n" $PATH
 end
+#______________________________________________________________________________
 
+function check-ollama-status --description "🚥 Check the status of the Ollama CLI and daemon"
+
+    # Check if the Ollama CLI is installed
+    if command -v ollama &>/dev/null
+        printf "\n✅ The Ollama CLI is installed\n\n"
+    else
+        printf "\n❌ The Ollama CLI is not installed\n\n"
+        return 1
+    end
+
+    # Check if systemctl is available
+    if not command -v systemctl &>/dev/null
+        printf "\n❌ systemctl is not available on this system\n\n"
+        return 1
+    end
+
+    # Check if the Ollama daemon is active
+    if systemctl is-active --quiet ollama
+        printf "✅ The Ollama daemon is active\n\n"
+    else
+        printf "⬛ The Ollama daemon is inactive\n\n"
+    end
+
+end
+#______________________________________________________________________________
+
+function toggle-ollama --description "🔁 Toggle the state of the Ollama daemon"
+
+    # Check if the Ollama CLI is installed
+    if not command -v ollama &>/dev/null
+        printf "\n❌ The Ollama CLI is not installed\n\n"
+        return 1
+    end
+
+    # Check if systemctl is available
+    if not command -v systemctl &>/dev/null
+        printf "\n❌ systemctl is not available on this system\n\n"
+        return 1
+    end
+
+    # Toggle the state of the Ollama daemon
+    if systemctl is-active --quiet ollama
+        sudo systemctl stop ollama.service
+        and printf "\n⬛ Ollama daemon deactivated\n\n"
+    else
+        sudo systemctl start ollama.service
+        and printf "\n✅ Ollama daemon activated\n\n"
+    end
+
+end
 #______________________________________________________________________________
 
 # SECTION: External Drive Management
@@ -228,3 +281,8 @@ if command -q starship
 end
 
 #______________________________________________________________________________
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/dezlymacauley/.lmstudio/bin
+# End of LM Studio CLI section
+
