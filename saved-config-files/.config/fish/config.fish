@@ -193,7 +193,7 @@ function list_path_variable_contents
 end
 #______________________________________________________________________________
 
-function check-ollama-status --description "🚥 Check the status of the Ollama CLI and daemon"
+function ollama-status --description "🚥 Check the status of the Ollama CLI and daemon"
 
     # Check if the Ollama CLI is installed
     if command -v ollama &>/dev/null
@@ -219,7 +219,7 @@ function check-ollama-status --description "🚥 Check the status of the Ollama 
 end
 #______________________________________________________________________________
 
-function toggle-ollama --description "🔁 Toggle the state of the Ollama daemon"
+function ollama-toggle --description "🔁 Toggle the state of the Ollama daemon"
 
     # Check if the Ollama CLI is installed
     if not command -v ollama &>/dev/null
