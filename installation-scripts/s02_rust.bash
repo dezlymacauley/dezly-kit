@@ -24,3 +24,10 @@ fi
 
 printf "%s\n\n" '___________________________________________________________'
 #______________________________________________________________________________
+
+# Install Global Rust tools with mise
+if command -v mise &>/dev/null; then
+    mise use -g cargo-binstall@latest
+    cargo binstall --no-confirm sqlx-cli
+fi
+#______________________________________________________________________________

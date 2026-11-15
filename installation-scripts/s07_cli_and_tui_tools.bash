@@ -20,6 +20,7 @@ if command -v mise &>/dev/null; then
     mise use -g usage
 
     mise use -g cargo-binstall@latest
+    cargo binstall --noconfirm sqlx-cli
 fi
 
 printf "%s\n\n" '___________________________________________________________'
