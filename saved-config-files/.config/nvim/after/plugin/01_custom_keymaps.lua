@@ -103,6 +103,55 @@ vim.keymap.set(
 
 --=============================================================================
 
+-- SECTION: Native Keymaps => Commands
+
+-- Use this by typing `:ConvertToLowercase` and pressing Enter
+vim.api.nvim_create_user_command("ConvertToLowercase", function()
+    vim.cmd("%s/.*/\\L&/")
+end, {
+    desc = "Convert all lines to lowercase",
+})
+
+vim.api.nvim_create_user_command("ConvertSpacesToUnderscores", function()
+    local oil = require("oil")
+    local bufnr = vim.api.nvim_get_current_buf()
+
+    if vim.bo[bufnr].filetype ~= "oil" then
+        vim.notify("Not an Oil buffer", vim.log.levels.WARN)
+        return
+    end
+
+    local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+
+    for lnum, line in ipairs(lines) do
+        local entry = oil.get_entry_on_line(bufnr, lnum)
+
+        if entry then
+            local old_name = entry.name
+            local new_name = old_name:gsub(" ", "_")
+
+            if new_name ~= old_name then
+                local start_pos = line:find(old_name, 1, true)
+
+                if start_pos then
+                    vim.api.nvim_buf_set_text(
+                        bufnr,
+                        lnum - 1,
+                        start_pos - 1,
+                        lnum - 1,
+                        start_pos - 1 + #old_name,
+                        { new_name }
+                    )
+                end
+            end
+        end
+    end
+end, {
+    desc = "Replace filename spaces with underscores",
+})
+
+--=============================================================================
+
 -- SECTION: Plugin Keymaps => oil.nvim
 
 vim.keymap.set(
