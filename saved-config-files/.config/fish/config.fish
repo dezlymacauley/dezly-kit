@@ -107,47 +107,19 @@ end
 # SECTION: GitHub Repos
 
 # Environment Variables
-set -g GH_PUBLIC "$HOME/local-workspace/github/public"
-set -g GH_PRIVATE "$HOME/local-workspace/github/private"
+set -g GITHUB_REPOS "$HOME/local-workspace/github"
 
-alias github-public="cd $GH_PUBLIC"
-alias c-lab="cd $GH_PUBLIC/c-lab"
-alias cpp-lab="cd $GH_PUBLIC/cpp-lab"
-alias database-lab="cd $GH_PUBLIC/database-lab"
-alias devops-lab="cd $GH_PUBLIC/devops-lab"
-alias dezly-kit="cd $GH_PUBLIC/dezly-kit"
-alias go-lab="cd $GH_PUBLIC/go-lab"
-alias python-lab="cd $GH_PUBLIC/python-lab"
-alias rust-lab="cd $GH_PUBLIC/rust-lab"
-alias ui-lab="cd $GH_PUBLIC/ui-lab"
-alias zig-lab="cd $GH_PUBLIC/zig-lab"
-
-alias github-private="cd $GH_PRIVATE"
-
-#______________________________________________________________________________
-
-# SECTION: Codeberg Repos
-
-# Environment Variables
-#
-# set -g CB_PUBLIC "$HOME/local-workspace/codeberg/public"
-# set -g CB_PRIVATE "$HOME/local-workspace/codeberg/private"
-#
-# DezlyKit
-# alias dezlykit-arch-linux="cd $CB_PUBLIC/dezlykit-arch-linux"
-#
-# Journals
-# alias docker-journal="cd $CB_PUBLIC/docker-journal"
-# alias go-journal="cd $CB_PUBLIC/go-journal"
-# alias postgres-journal="cd $CB_PUBLIC/postgres-journal"
-# alias python-journal="cd $CB_PUBLIC/python-journal"
-# alias rust-journal="cd $CB_PUBLIC/rust-journal"
-# alias typescript-journal="cd $CB_PUBLIC/typescript-journal"
-#
-# Workflows
-# alias mise-docker-workflow="cd $CB_PUBLIC/mise-docker-workflow"
-# alias mise-postgres-workflow="cd $CB_PUBLIC/mise-postgres-workflow"
-
+alias github-public="cd $GITHUB_REPOS"
+alias c-lab="cd $GITHUB_REPOS/c-lab"
+alias cpp-lab="cd $GITHUB_REPOS/cpp-lab"
+alias database-lab="cd $GITHUB_REPOS/database-lab"
+alias devops-lab="cd $GITHUB_REPOS/devops-lab"
+alias dezly-kit="cd $GITHUB_REPOS/dezly-kit"
+alias go-lab="cd $GITHUB_REPOS/go-lab"
+alias python-lab="cd $GITHUB_REPOS/python-lab"
+alias rust-lab="cd $GITHUB_REPOS/rust-lab"
+alias ui-lab="cd $GITHUB_REPOS/ui-lab"
+alias zig-lab="cd $GITHUB_REPOS/zig-lab"
 #______________________________________________________________________________
 
 # SECTION: Configuration Aliases
@@ -158,7 +130,6 @@ alias config-niri="cd $HOME/.config/niri && nvim config.kdl"
 alias config-rio="cd $HOME/.config/rio && nvim config.toml"
 alias config-yazi="cd $HOME/.config/yazi && nvim yazi.toml"
 alias config-zellij="cd $HOME/.config/zellij && nvim config.kdl"
-
 #______________________________________________________________________________
 
 # SECTION: System Aliases
